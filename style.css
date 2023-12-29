@@ -52,7 +52,7 @@ a:hover {
     49% {
         color: #020A11;
         background-color: #D9DFB9;
-    
+
     }
 
     50% {
@@ -69,8 +69,27 @@ a:hover {
 h1 {
     font-size: 5vw;
     text-align: center;
+    text-shadow: 3px 3px 0px #460303;
 }
 
 hr {
     border: 1px dashed #9E2630;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+header a {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header a svg {
+    fill: #9E2630;
 }

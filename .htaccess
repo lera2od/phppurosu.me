@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/(background|index\.html|style\.css)
+RewriteRule (.*) link.php [QSA,L]
