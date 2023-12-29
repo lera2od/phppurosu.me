@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhpPurosu.me</title>
+    <link rel="stylesheet" href="style.css?xdxx">
+</head>
+
+<body>
+    <div class="loader">
+        <a onclick="load()">Click To Start</a>
+    </div>
+    <main>
+        <hr>
+        <h1>PHPPUROSU</h1>
+        <hr>
+        <a href="https://github.com/lera2od/">Github</a>
+        <a href="https://discord.gg/VT725vxxpT">Discord</a>
+    </main>
+    <script>
+        var hoversounds = [
+            "/background/command_line_click%231.wav",
+            "/background/command_line_click%232.wav",
+            "/background/command_line_click%233.wav",
+            "/background/command_line_click%234.wav",
+            "/background/command_line_click%235.wav",
+        ]
+
+        document.querySelectorAll("a").forEach(function (el) {
+            el.addEventListener("mouseover", function () {
+                var sound = new Audio(hoversounds[Math.floor(Math.random() * hoversounds.length)]);
+                sound.play();
+            });
+
+            el.addEventListener("click", function () {
+                var sound = new Audio(hoversounds[Math.floor(Math.random() * hoversounds.length)]);
+                sound.play();
+            });
+        });
+
+        function load() {
+            var loader = document.querySelector(".loader");
+            var main = document.querySelector("main");
+            loader.innerHTML = "";
+            loader.style.backgroundColor = "black";
+            main.style.display = "block";
+            var sound = new Audio("/background/printer.mp3");
+            sound.play();
+            var id = setInterval(frame, 500);
+
+            function frame() {
+                if (loader.clientHeight <= 0) {
+                    clearInterval(id);
+                    sound.pause();
+                    loader.remove();
+                } else {
+                    loader.style.height = loader.clientHeight - removefind() + "px";
+                }
+            }
+
+            function removefind() {
+                var height = loader.clientHeight;
+                var remove = Math.floor(Math.random() * (height / 2 - height / 3 + 1)) + height / 3;
+                return remove;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-image: url("background/arkaplan.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Press Start 2P', cursive;
+    cursor: url("background/cursor_icons_1.png"), auto;
+    color: #9E2630;
+    overflow: hidden;
+}
+
+main {
+    display: none;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+a {
+    cursor: url("background/cursor_icons_19.png"), auto;
+    color: #9E2630;
+    transition: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+a:hover {
+    color: #020A11;
+    background-color: #D9DFB9;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        color: #020A11;
+        background-color: #D9DFB9;
+    }
+
+    49% {
+        color: #020A11;
+        background-color: #D9DFB9;
+    
+    }
+
+    50% {
+        color: #9E2630;
+        background: none;
+    }
+
+    100% {
+        color: #9E2630;
+        background: none;
+    }
+}
+
+h1 {
+    font-size: 5vw;
+    text-align: center;
+}
+
+hr {
+    border: 1px dashed #9E2630;
+}
