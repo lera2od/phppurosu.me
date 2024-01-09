@@ -75,8 +75,14 @@
 
         document.querySelectorAll("a").forEach(function (el) {
             el.addEventListener("mouseover", function () {
+                if (el.getAttribute("hovering") == "true") return;
+                el.setAttribute("hovering", "true");
                 var sound = new Audio(hoversounds[Math.floor(Math.random() * hoversounds.length)]);
                 sound.play();
+            });
+
+            el.addEventListener("mouseout", function () {
+                el.setAttribute("hovering", "false");
             });
 
             el.addEventListener("click", function () {
